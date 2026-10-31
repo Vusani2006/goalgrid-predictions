@@ -1,0 +1,21 @@
+APES NATION FOOTBALL PREDICTION — LAPTOP SETUP
+1. Download and extract the newest ZIP (do NOT upload the ZIP directly).
+2. In GitHub, open Vusani2006/goalgrid-predictions > Add file > Upload files.
+3. Upload ALL source files and folders to the repository root, including
+   .github/workflows/publish-predictions.yml, netlify.toml and build_site.sh.
+   Keep API keys private. The folder .github may be hidden on some systems.
+4. Open https://app.netlify.com/start > Import from Git > GitHub.
+   Connect the goalgrid-predictions repository to Netlify.
+   The netlify.toml file sets the build to bash build_site.sh and publish=dist.
+5. GitHub repo > Settings > Secrets and variables > Actions > New repository secret:
+   API_SPORTS_KEY = your API-Football key. Do not share it publicly.
+6. GitHub repo > Actions > Generate daily Apes Nation football predictions > Run workflow.
+   Check the job succeeds AND Netlify deploys the updated site.
+7. The updater attempts a run daily near 07:17 South Africa time. It may
+   skip unsupported or low-data matches. GitHub schedule timing is not guaranteed.
+8. OPTIONAL LATER: Supabase authentication for private VIP picks, then
+   separately verified recurring payments for R150/month before real billing.
+The website is NOT live until uploaded, connected and tested.
+
+OWNER'S FREE VIP ACCESS (ONLY ONE OWNER):
+After setting up Supabase and registering your account, open Supabase > Authentication > Users, copy your account UUID, and run the commented OWNER SETUP command at the bottom of supabase.sql in Supabase SQL Editor. This grants your one account permanent R0 VIP access. Do NOT grant owner access by changing browser files or choosing a special email string. Other VIP members must have verified active subscriptions at R150/month.

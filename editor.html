@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#09130f">
+<title>Apes Nation Football Prediction — Local Research & Publishing Studio</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="editor.css">
+</head>
+<body>
+<div class="studio-shell container">
+  <header class="studio-head"><a class="studio-brand" href="index.html"><strong>APES<span> NATION</span></strong><small>↗ VIEW PUBLIC WEBSITE</small></a><span class="studio-tag">LOCAL RESEARCH STUDIO · NOT A SECURE ONLINE ADMIN PANEL</span></header>
+  <div class="studio-hero"><div><p class="studio-eyebrow">PREDICTION PUBLISHER / v1.0</p><h1>RESEARCH FIRST.<br><em>PUBLISH SECOND.</em></h1><p>Enter real, venue-specific match statistics. The calculator produces transparent, experimental estimates for over 2.5 goals, full-time corners, and over 3.5 first-half corners.</p></div><div class="studio-signal"><span>03</span><small>MARKETS<br>IN ONE WORKFLOW</small></div></div>
+  <div class="studio-warning"><strong>IMPORTANT:</strong> This tool does not automatically fetch statistics or verify your numbers. Model estimates are not independently validated probabilities. It runs in your browser; publishing requires exporting <code>data.js</code> and redeploying the website.</div>
+  <form id="research-form" novalidate>
+    <section class="studio-section"><div class="studio-section-title"><span>01 /</span><div><h2>MATCH DETAILS</h2><p>Choose the exact fixture and local kick-off time (South Africa, SAST).</p></div></div><div class="studio-form-grid">
+      <label>Home team <input name="home" id="f-home" placeholder="e.g. Arsenal" autocomplete="off" required></label>
+      <label>Away team <input name="away" id="f-away" placeholder="e.g. Chelsea" autocomplete="off" required></label>
+      <label>League <input name="league" id="f-league" placeholder="e.g. Premier League" required></label>
+      <label>Kickoff (SAST) <input name="kickoff" id="f-kickoff" type="datetime-local" required></label>
+      <label>Home matches sampled <input name="sampleHome" id="f-sample-home" type="number" min="1" max="100" step="1" placeholder="e.g. 8" required></label>
+      <label>Away matches sampled <input name="sampleAway" id="f-sample-away" type="number" min="1" max="100" step="1" placeholder="e.g. 8" required></label>
+    </div></section>
+    <section class="studio-section"><div class="studio-section-title"><span>02 /</span><div><h2>RECENT MATCH DATA</h2><p>Use recent home games for the home side and away games for the away side. All figures are average events per match.</p></div></div>
+      <div class="metrics-grid">
+        <fieldset class="metric-panel"><legend><span class="metric-emoji">⚽</span> OVER 2.5 GOALS</legend><p>Full-time goals per match, from recent matches at the relevant venue.</p><div class="metric-fields"><label>Home goals scored <input type="number" id="goals-home-for" min="0" max="20" step="0.01" placeholder="1.80"></label><label>Away goals conceded <input type="number" id="goals-away-allow" min="0" max="20" step="0.01" placeholder="1.45"></label><label>Away goals scored <input type="number" id="goals-away-for" min="0" max="20" step="0.01" placeholder="1.20"></label><label>Home goals conceded <input type="number" id="goals-home-allow" min="0" max="20" step="0.01" placeholder="1.10"></label></div></fieldset>
+        <fieldset class="metric-panel"><legend><span class="metric-emoji">🚩</span> FULL-TIME CORNERS</legend><p>Full-match corners earned and allowed. Select the corners threshold below.</p><div class="metric-fields"><label>Home corners won <input type="number" id="corners-home-for" min="0" max="20" step="0.01" placeholder="5.40"></label><label>Away corners conceded <input type="number" id="corners-away-allow" min="0" max="20" step="0.01" placeholder="4.80"></label><label>Away corners won <input type="number" id="corners-away-for" min="0" max="20" step="0.01" placeholder="4.20"></label><label>Home corners conceded <input type="number" id="corners-home-allow" min="0" max="20" step="0.01" placeholder="4.60"></label></div><label class="line-selector">Corner line <select id="corners-line"><option value="7.5">Over 7.5</option><option value="8.5" selected>Over 8.5</option><option value="9.5">Over 9.5</option><option value="10.5">Over 10.5</option><option value="11.5">Over 11.5</option></select></label></fieldset>
+        <fieldset class="metric-panel"><legend><span class="metric-emoji">⏱</span> FIRST-HALF CORNERS</legend><p>Only first-half corners. Do not substitute full-time averages.</p><div class="metric-fields"><label>Home 1H corners won <input type="number" id="firsthalf-home-for" min="0" max="20" step="0.01" placeholder="2.70"></label><label>Away 1H corners conceded <input type="number" id="firsthalf-away-allow" min="0" max="20" step="0.01" placeholder="2.40"></label><label>Away 1H corners won <input type="number" id="firsthalf-away-for" min="0" max="20" step="0.01" placeholder="2.10"></label><label>Home 1H corners conceded <input type="number" id="firsthalf-home-allow" min="0" max="20" step="0.01" placeholder="2.00"></label></div><label class="line-selector">First-half line <select id="firsthalf-line"><option value="2.5">Over 2.5</option><option value="3.5" selected>Over 3.5</option><option value="4.5">Over 4.5</option><option value="5.5">Over 5.5</option></select></label></fieldset>
+      </div>
+    </section>
+    <section class="studio-section"><div class="studio-section-title"><span>03 /</span><div><h2>EVIDENCE & MATCH CONTEXT</h2><p>Record where you obtained the numbers and any factors that might invalidate an otherwise promising trend.</p></div></div><div class="studio-form-grid">
+      <label>Research source URL <input id="f-source" type="url" placeholder="https://www.example.com/match-statistics" required></label>
+      <label>Second source URL (optional) <input id="f-source-2" type="url" placeholder="https://..."></label>
+      <label>Latest lineup / injury news <input id="f-team-news" placeholder="e.g. Starting XI not yet confirmed"></label>
+      <label>Data checked on (date) <input id="f-checked" type="date"></label>
+      <label class="studio-wide">Reasoning / tactical notes <textarea id="f-note" rows="3" placeholder="Explain recent venue trends, opponent strength, game tempo, lineup risks, and what could go wrong." required></textarea></label>
+    </div></section>
+    <section class="studio-section"><div class="studio-section-title"><span>04 /</span><div><h2>MODEL OUTPUT & RELEASE</h2><p>Preliminary estimates use a simple Poisson model. Corner counts can be overdispersed; the estimates are not calibrated or guaranteed.</p></div></div>
+      <div id="estimate-grid" class="estimate-grid" aria-live="polite"></div>
+      <div class="publish-bar"><div><strong>SELECT MARKETS TO PUBLISH</strong><div class="publish-checks"><label><input type="checkbox" id="check-goals" checked> Over 2.5 goals</label><label><input type="checkbox" id="check-corners" checked> Full-time corners</label><label><input type="checkbox" id="check-firsthalf" checked> First-half corners</label></div></div><button class="studio-action" type="submit">ADD RESEARCHED PICKS ↗</button></div>
+      <p id="form-message" class="form-message" role="status"></p>
+    </section>
+  </form>
+  <section class="studio-section stored-section"><div class="studio-section-title"><span>05 /</span><div><h2>PUBLISHING QUEUE</h2><p>Update settled results truthfully. Download a new data.js, replace the website file, then redeploy.</p></div></div>
+    <div id="stored-picks" class="stored-picks"></div>
+    <div class="queue-actions"><button id="export-btn" class="studio-action" type="button">DOWNLOAD DATA.JS ↗</button><button id="clear-btn" class="studio-ghost" type="button">CLEAR QUEUE</button></div><p class="queue-help" id="queue-message">Your draft is stored only in this browser. Nothing goes live by itself.</p>
+  </section>
+  <footer class="studio-foot"><a href="index.html">← PUBLIC SITE</a><span>APES NATION · EXPERIMENTAL RESEARCH TOOL · NO GUARANTEES</span></footer>
+</div>
+<script src="data.js"></script><script src="model.js"></script><script src="editor.js"></script>
+</body>
+</html>

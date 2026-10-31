@@ -1,0 +1,92 @@
+APES NATION FOOTBALL PREDICTION — FIRST STEPS
+====================================
+PRICE: FREE predictions R0 | VIP Premium R150/month.
+IMPORTANT: This package is NOT live yet and does NOT take payments.
+
+A. UPLOAD THE WEBSITE FILES TO GITHUB
+1. In the iPhone Files app, locate Apes_Nation_Football_Prediction.zip.
+2. Tap the ZIP to extract it. Open the extracted folder.
+3. Open https://github.com/Vusani2006/goalgrid-predictions
+4. If the repository is still empty, tap "uploading an existing file".
+   Otherwise use Add file > Upload files.
+5. Tap "choose your files" > Browse (not Photo Library).
+6. Navigate to the extracted folder (usually On My iPhone > Downloads
+   or iCloud Drive > Downloads). Select the INDIVIDUAL files such as
+   index.html, styles.css, script.js, config.js, vip.js, data.js,
+   quality_model.py, backtest.py, backtest_data.js,
+   auto_predict.py, supabase.sql, etc. Do NOT choose the ZIP.
+7. Tap Commit changes.
+8. Important: The hidden .github/workflows/publish-predictions.yml file
+   MUST also be added later. If the iPhone picker hides the .github folder,
+   it is easiest to finish that workflow step on a laptop.
+
+B. HOST YOUR BUSINESS WEBSITE ON NETLIFY (FREE PLAN HAS LIMITS)
+1. Open https://app.netlify.com/start and create or sign in to your account.
+2. Choose Import from an existing Git repository > GitHub.
+3. Select the 'goalgrid-predictions' repository from your GitHub account.
+4. Netlify reads netlify.toml automatically and publishes the 'dist' folder.
+5. Wait for the initial deployment, and open your Netlify website URL.
+6. This site can be viewed publicly, but subscriptions are NOT active yet.
+NOTE: Do not use GitHub Pages as your commercial VIP hosting service.
+
+C. CONNECT DAILY AUTOMATIC PREDICTIONS
+1. Repo > Settings > Secrets and variables > Actions > New repository secret.
+2. Name: API_SPORTS_KEY ; value: your private API-Football key.
+3. Upload .github/workflows/publish-predictions.yml to its correct path.
+4. Repo > Actions > Generate daily Apes Nation football predictions > Run workflow.
+5. Check that the run is GREEN and that GitHub received the generated changes.
+6. Netlify connected to the same repo normally redeploys on each new push.
+7. Confirm on Netlify Deploys that the latest version is live.
+Daily schedule targets 07:17 SAST, but GitHub can delay/skip scheduled runs.
+Predictions are only published with real usable data; sometimes NO tips appear.
+
+D. TURN ON SECURE VIP LOGIN (OPTIONAL NEXT PHASE)
+1. Make a free Supabase project: https://supabase.com/
+2. Supabase > SQL Editor > paste and run supabase.sql from this folder.
+3. Obtain Project URL and PUBLIC "publishable/anon" key (NOT service_role).
+4. Edit the public config.js file in your GitHub repository with those values.
+5. In Supabase Authentication > URL Configuration, add the public Pages
+   website URL as an allowed redirect URL.
+6. In GitHub Actions secrets, also add:
+     SUPABASE_URL = your Supabase project URL
+     SUPABASE_SERVICE_ROLE_KEY = secret service_role key
+   NEVER place service_role in public HTML, CSS or JS.
+7. With these secrets set, the scheduler can publish one extra researched
+   VIP pick per eligible match into protected database storage.
+8. Users can create an account; they have NO VIP access until an admin
+   activates a paid entitlement after independently verified payment.
+
+E. TAKING R150 SUBSCRIPTIONS — NOT YET ACTIVE
+- A payment provider such as Payfast must first be set up, and its recurring
+  payments, notifications, cancellations, renewals and access updates tested.
+- Never accept customer payment expecting this static site to activate
+  them automatically. There is currently NO live Subscribe or Pay button.
+- See README.md for a manual entitlement TEST and production checklist.
+
+TROUBLESHOOT: CAN'T FIND THE EXTRACTED FILES?
+Open Files > Browse > On My iPhone OR iCloud Drive > Downloads.
+Long-press the folder and move it into On My iPhone > Downloads if needed.
+In GitHub, use the browser's Choose Files > Browse, and locate that folder.
+Some iPhones hide file extensions; "index" is often "index.html".
+For best results use a laptop to upload the complete directory including .github.
+
+REMINDER: VIP is *extra research*, not guaranteed profit.
+
+BRANDING NOTE: Your existing GitHub repository goalgrid-predictions can stay as it is. The displayed website is named Apes Nation Football Prediction.
+
+SOLE OWNER'S FREE VIP (NO MONTHLY PAYMENT):
+Register YOUR email account on the completed website, verify it, then open
+Supabase > Authentication > Users to copy YOUR actual Supabase User UUID.
+In the Supabase SQL Editor run the commented OWNER SETUP statement from the
+end of supabase.sql, substituting your UUID. The database restricts the
+free-owner role to one user and gives no client account permission to assign it.
+Other VIP customers require verified active R150 monthly subscriptions.
+The payment checkout is still NOT connected.
+
+CURRENT SQUAD INTELLIGENCE:
+The model attempts recent team formation, injury/suspension reports,
+observed starters and absences, possession, shots and corners when the
+API supplies those statistics. It does not claim missing data means a healthy
+squad or that historical with/without differences prove causation.
+Starting lineups are often unavailable at the morning run; a manual run near
+kickoff, or a higher-quota scheduler, is needed to check newly confirmed XIs.
