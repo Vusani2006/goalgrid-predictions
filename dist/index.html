@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09130f">
+  <meta name="description" content="Apes Nation Football Prediction — research-led daily football predictions for goals, corners, match results, and 2UP across six major European leagues and South Africa's PSL.">
+  <title>Apes Nation Football Prediction — Football Predictions &amp; Insights</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-wrap">
+    <div class="announcement"><span class="pulse-dot"></span> DATA-LED FOOTBALL ANALYSIS <span class="announcement-sep">•</span>  NO GUARANTEED RESULTS</div>
+    <header class="nav container">
+      <a class="logo" href="#home" aria-label="Apes Nation Football Prediction home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 40 40" role="img"><path d="M20 3 36 11v18L20 37 4 29V11Z" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="20" y="25.5" fill="currentColor" stroke="none" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="900">AN</text></svg></span><span>APES <span class="logo-accent">NATION</span><small>FOOTBALL PREDICTION</small></span></a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="#picks">Free predictions</a><a href="#membership">VIP membership</a><a href="#approach">Our approach</a><a href="#results">Results</a></nav>
+      <a href="#picks" class="nav-cta">Explore picks <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="home">
+      <section class="hero container">
+        <div class="hero-left">
+          <div class="eyebrow"><span class="mini-line"></span> FIVE FOCUSED MARKETS <span class="eyebrow-number">/ 001</span></div>
+          <h1>GOALS.<br><span class="outline-word">CORNERS.</span><br><span class="green-word">RESEARCH<span class="period">.</span></span></h1>
+          <p class="hero-description">Automated daily football research across six major European leagues and South Africa’s PSL. Free daily picks plus VIP Premium at R150/month for deeper research, with transparent estimates and trackable results.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#picks">View predictions <span>↗</span></a><a class="text-link" href="#approach">How we analyse <span>→</span></a></div>
+          <div class="hero-bottom"><span class="hero-tiny-icon">✳</span> BUILT FOR FANS WHO LOOK BEYOND THE SCORELINE</div>
+        </div>
+        <div class="hero-right" aria-label="Featured prediction">
+          <div class="decor-circle decor-circle-a"></div><div class="decor-circle decor-circle-b"></div>
+          <div class="hero-topline"><span><span class="pulse-dot"></span> PICK OF THE BOARD</span><span id="hero-date">MATCHDAY</span></div>
+          <div class="feature-card">
+            <div class="feature-meta"><span class="feature-label">✦ FEATURED PICK</span><span id="featured-league">MATCH ANALYSIS</span></div>
+            <div class="feature-teams"><div class="feature-team"><div class="team-logo large" id="featured-home-badge">FC</div><strong id="featured-home">Home team</strong></div><span class="versus">VS<span class="versus-line"></span></span><div class="feature-team"><div class="team-logo large" id="featured-away-badge">FC</div><strong id="featured-away">Away team</strong></div></div>
+            <div class="feature-divider"></div>
+            <div class="feature-pick-label">OUR PREDICTION</div>
+            <div class="featured-tip"><span id="featured-tip">Check the latest picks</span><span class="featured-arrow">↗</span></div>
+            <p id="featured-reason" class="feature-reason">Match selections and analysis appear here.</p>
+            <div class="feature-footer"><span id="featured-date">LATEST UPDATE</span><span id="featured-sample" class="tiny-demo">EXAMPLE PREVIEW</span></div>
+          </div>
+          <div class="hero-decoration">AN</div>
+        </div>
+      </section>
+      <section class="numbers container" aria-label="Website statistics">
+        <div class="number-item"><span class="number-label">PICKS ON THE BOARD</span><div class="number-value" id="stat-picks">00</div></div>
+        <div class="number-item"><span class="number-label">LEAGUES COVERED</span><div class="number-value" id="stat-leagues">00</div></div>
+        <div class="number-item"><span class="number-label">SETTLED HIT RATE</span><div class="number-value" id="stat-hit">—</div></div>
+        <div class="number-item number-message"><span class="asterisk">✳</span><p>Check the data.<br>Understand the risk.<br><span>No certain outcomes.</span></p></div>
+      </section>
+      <section class="picks-section" id="picks">
+        <div class="container">
+          <div class="section-kicker"><span class="mini-line"></span> FREE & VIP FOOTBALL RESEARCH <span class="light-number">/ 002</span></div>
+          <div class="section-header"><div><h2>PICK YOUR <span>LEVEL.</span></h2><p>Free automated picks for everybody, with a members-only VIP research section (activation pending). We never promise guaranteed wins.</p></div><div class="update-mark"><span class="pulse-dot"></span><span id="last-updated">UPDATED WHEN NEW PICKS ARE POSTED</span></div></div>
+          <div id="automation-banner" class="demo-banner" hidden><span>↻</span><div id="automation-message">AUTOMATION NOT CONNECTED. Publish this site on GitHub and set API_SPORTS_KEY to enable verified daily picks.</div></div>
+          <div id="demo-banner" class="demo-banner" hidden><span>⚑</span><div><strong>DEMO CONTENT</strong> — These fictional matchups illustrate the available markets. They are NOT real fixtures, researched tips, or betting recommendations. Publish your own verified research with the local editor.</div></div>
+          <div class="tier-picker" role="tablist" aria-label="Prediction access level">
+            <button type="button" class="tier-tab active" data-tier="free" role="tab" aria-controls="free-board" aria-selected="true"><span class="tier-emoji">⚽</span><span><strong>FREE PREDICTIONS</strong><small>Public daily match analysis</small></span><span class="tier-arrow">↗</span></button>
+            <button type="button" class="tier-tab" data-tier="vip" role="tab" aria-controls="vip-board" aria-selected="false"><span class="tier-emoji">✦</span><span><strong>VIP PREMIUM</strong><small>R150/month · Secure VIP access</small></span><span class="tier-arrow">↗</span></button>
+          </div>
+          <div id="free-board" role="tabpanel" aria-label="Free predictions">
+          <div class="free-intro"><strong>FREE ACCESS</strong><span>View published picks and check how previous selections performed. No registration required.</span></div>
+          <div class="market-toolbar" role="group" aria-label="Filter by prediction market"><button class="market-tab active" data-market="all" type="button">All markets</button><button class="market-tab" data-market="goals25" type="button">⚽ Over 2.5 goals</button><button class="market-tab" data-market="cornersFT" type="button">🚩 Full-time corners</button><button class="market-tab" data-market="corners1H" type="button">⏱ Over 3.5 1H corners</button><button class="market-tab" data-market="resultFT" type="button">🏆 Full-time 1X2</button><button class="market-tab" data-market="twoUP" type="button">🔥 2UP</button></div>
+          <div class="league-strip">LEAGUES: 🇿🇦 PSL &nbsp;·&nbsp; 🇬🇧 PREMIER LEAGUE &nbsp;·&nbsp; 🇪🇸 LA LIGA &nbsp;·&nbsp; 🇮🇹 SERIE A &nbsp;·&nbsp; 🇩🇪 BUNDESLIGA &nbsp;·&nbsp; 🇫🇷 LIGUE 1 &nbsp;·&nbsp; 🇵🇹 PRIMEIRA LIGA</div>
+          <div class="toolbar"><div class="filter-tabs" role="group" aria-label="Filter by match status"><button class="filter-tab active" type="button" data-filter="all">All picks</button><button class="filter-tab" type="button" data-filter="today">Today</button><button class="filter-tab" type="button" data-filter="upcoming">Upcoming</button><button class="filter-tab" type="button" data-filter="results">Results</button></div><div class="filter-right"><label class="sr-only" for="league-select">Filter by league</label><select id="league-select"><option value="all">All leagues</option></select><span class="pick-count" id="pick-count">0 MATCHES</span></div></div>
+          <div id="pick-grid" class="pick-grid" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state" hidden><span>◎</span><h3>Nothing on the board yet.</h3><p>Try another filter, or check back when new match insights have been posted.</p><button type="button" class="btn btn-secondary" id="reset-filters">Show all picks →</button></div>
+          </div>
+          <div id="vip-board" role="tabpanel" aria-label="VIP premium predictions" hidden>
+            <div class="vip-grid" id="membership">
+              <div class="vip-primary">
+                <div class="vip-top"><span class="vip-monogram">AN<span>✦</span></span><span class="vip-status">R150 / MONTH</span></div>
+                <span class="vip-overline">APES NATION / PREMIUM RESEARCH</span>
+                <h3>THE <em>VIP</em> ROOM.</h3>
+                <p>One place for subscribers to explore additional football analysis, full-match results and 2UP, goals and corners, with transparent sample sizes and tracked results.</p>
+                <div class="vip-price"><span>R150 <small>/ month</small></span><small>Subscription price set. Checkout is not active until a verified payment provider is connected.</small></div>
+                <div class="vip-notice"><span aria-hidden="true">🔒</span><div><strong>Your VIP access is protected.</strong><br>Sign-in and private predictions activate after the optional Supabase setup. No payments are being collected yet.</div></div>
+              </div>
+              <div class="vip-benefits">
+                <div class="vip-small-heading">VIP MEMBER FEATURES <span>✦</span></div>
+                <div class="vip-benefit"><b>01</b><div><strong>Extra match analysis</strong><p>More detailed goal trends, venue splits, form and sample quality.</p></div></div>
+                <div class="vip-benefit"><b>02</b><div><strong>Advanced corner reports</strong><p>First-half corners and full-match corner research, when the data provider supports it.</p></div></div>
+                <div class="vip-benefit"><b>03</b><div><strong>Full-time result & 2UP</strong><p>1X2 probabilities and models of which team may establish a two-goal lead.</p></div></div>
+                <div class="vip-benefit"><b>04</b><div><strong>Transparent result history</strong><p>Every published VIP selection to be tracked as won, lost, pending or void.</p></div></div>
+                <p class="vip-disclaimer">VIP includes additional research, not guaranteed accuracy. Private VIP picks are never stored in public website files. Payments and subscriber activation must be verified before launch.</p>
+              </div>
+            </div>
+          </div>
+          <section class="vip-account" id="vip-account" aria-label="VIP account and predictions">
+            <div class="vip-account-heading"><div><span class="vip-overline">MEMBER ACCESS / R150 PER MONTH</span><h3>YOUR VIP <span>ACCOUNT.</span></h3></div><span class="vip-account-tag">PRIVATE PICKS</span></div>
+            <div id="vip-setup-message" class="vip-callout">Member login is not connected yet. Set up Supabase using the included instructions; no payment is requested here.</div>
+            <div id="vip-auth-wrap" hidden>
+              <div id="vip-auth-guest">
+                <form id="vip-auth-form" class="vip-auth-form">
+                  <label for="vip-email">Email address</label><input id="vip-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                  <label for="vip-password">Password (at least 6 characters)</label><input id="vip-password" type="password" minlength="6" autocomplete="current-password" placeholder="Your password" required>
+                  <div class="vip-auth-buttons"><button type="submit" id="vip-signin" class="btn btn-primary">Sign in</button><button type="button" id="vip-signup" class="btn btn-secondary">Create free account</button></div>
+                </form>
+              </div>
+              <div id="vip-auth-user" hidden><p id="vip-auth-email"></p><button type="button" id="vip-signout" class="btn btn-secondary">Sign out</button></div>
+              <div id="vip-auth-message" role="status" aria-live="polite"></div>
+              <div id="vip-member-state" class="vip-callout" hidden></div>
+              <div id="vip-picks" class="vip-private-grid" aria-live="polite" hidden></div>
+              <p class="vip-security-hint">Only the single verified site-owner account has permanent complimentary access; all other VIP access requires a verified, active membership. Private predictions are never embedded in public files. Checkout and automatic payment activation are not yet enabled.</p>
+            </div>
+          </section>
+          </div>
+        </div>
+      </section>
+      <section class="approach-section container" id="approach"><div class="approach-left"><div class="section-kicker"><span class="mini-line"></span> BEHIND THE PICKS <span class="light-number">/ 003</span></div><h2>NO MAGIC.<br><span>JUST MATCH<br>INTELLIGENCE.</span></h2><p>Our automatic statistical model is a research aid, not a promise. Reliable input, transparency, and honest results matter.</p></div><div class="approach-steps"><div class="approach-step"><span class="step-num">01 /</span><div><h3>Over 2.5 goals</h3><p>Use recent home/away goals for and against, with enough matches to spot patterns rather than one-off scores.</p></div><span class="step-symbol">↗</span></div><div class="approach-step"><span class="step-num">02 /</span><div><h3>Full-time corners</h3><p>Compare corners earned and conceded, venue splits, attacking width, and the likely game state.</p></div><span class="step-symbol">↗</span></div><div class="approach-step"><span class="step-num">03 /</span><div><h3>First-half corners</h3><p>Check first-half corner counts separately, plus starting lineups and early-game tendencies. Never extrapolate blindly from full-time corners.</p></div><span class="step-symbol">↗</span></div><div class="approach-step"><span class="step-num">04 /</span><div><h3>Full-time 1X2 &amp; 2UP</h3><p>Estimate home win, draw and away win from goals scored/conceded. 2UP models whether either team goes two goals ahead during play; bookmaker promotions can have different rules.</p></div><span class="step-symbol">↗</span></div></div></section>
+      <section class="results-section" id="results"><div class="container results-layout"><div><div class="section-kicker"><span class="mini-line"></span> KEEPING SCORE <span class="light-number">/ 004</span></div><h2>LET THE <span>RESULTS</span><br>DO THE TALKING.</h2><p>Completed picks appear with an honest won/lost/void status. Unsettled predictions aren't counted as wins.</p><p id="backtest-summary" class="backtest-summary">Historical model testing: collecting real match samples. No verified backtest accuracy yet.</p></div><div class="results-summary"><span>SETTLED PREDICTIONS</span><strong id="results-total">0</strong><div class="results-split"><span><b id="results-won">0</b> WON</span><span><b id="results-lost">0</b> LOST</span><span><b id="results-void">0</b> VOID</span></div></div></div></section>
+      <section class="cta-section container"><div><span class="cta-kicker">READY FOR KICKOFF?</span><h2>THE NEXT MATCH<br>STARTS <em>HERE.</em></h2></div><a href="#picks" class="cta-round" aria-label="Back to predictions">↗</a></section>
+    </main>
+    <footer class="footer"><div class="container footer-main"><div><div class="footer-logo">APES <span>NATION</span><small>FOOTBALL PREDICTION</small></div><p>Free football insights and VIP Premium at R150/month (checkout pending).<br>Seven leagues. Five markets. Research first. No guarantees.</p></div><div class="footer-links"><a href="#home">Home</a><a href="#picks">Free & VIP</a><a href="#membership" id="vip-footer-link">VIP membership</a><a href="#approach">Approach</a><a href="#results">Results</a></div></div><div class="container footer-bottom"><span>© <span id="copyright-year">2026</span> APES NATION FOOTBALL PREDICTION. ALL RIGHTS RESERVED.</span><span>MODEL ESTIMATES ARE NOT VERIFIED PROBABILITIES. NEVER BET MONEY YOU CANNOT AFFORD TO LOSE. 18+.</span></div></footer>
+  </div>
+  <script src="data.js"></script><script src="backtest_data.js"></script><script src="script.js"></script><script src="config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="vip.js"></script>
+</body>
+</html>
