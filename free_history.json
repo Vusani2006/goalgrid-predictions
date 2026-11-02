@@ -222,7 +222,7 @@
       "confidence": 67,
       "projectedTotal": 3.12,
       "reason": "Experimental goals model: 1.94 expected home goals and 1.18 away; not a verified win probability.",
-      "status": "pending",
+      "status": "lost",
       "research": {
         "sampleHome": 4,
         "sampleAway": 3,
@@ -236,7 +236,8 @@
         "sources": [
           "https://www.football-data.org/"
         ]
-      }
+      },
+      "finalScore": "1–1"
     },
     "FDORG-565844-goals25": {
       "id": "FDORG-565844-goals25",
@@ -251,7 +252,7 @@
       "confidence": 69,
       "projectedTotal": 3.37,
       "reason": "Experimental goals model: 2.07 expected home goals and 1.30 away; not a verified win probability.",
-      "status": "pending",
+      "status": "won",
       "research": {
         "sampleHome": 3,
         "sampleAway": 4,
@@ -265,7 +266,8 @@
         "sources": [
           "https://www.football-data.org/"
         ]
-      }
+      },
+      "finalScore": "3–1"
     },
     "FDORG-565852-goals25": {
       "id": "FDORG-565852-goals25",
@@ -309,7 +311,7 @@
       "confidence": 65,
       "projectedTotal": 3.58,
       "reason": "Experimental goals model: 1.82 expected home goals and 1.76 away; not a verified win probability.",
-      "status": "pending",
+      "status": "lost",
       "research": {
         "sampleHome": 4,
         "sampleAway": 4,
@@ -323,7 +325,8 @@
         "sources": [
           "https://www.football-data.org/"
         ]
-      }
+      },
+      "finalScore": "2–0"
     },
     "FDORG-558531-goals25": {
       "id": "FDORG-558531-goals25",
@@ -488,6 +491,151 @@
         "sampleHome": 3,
         "sampleAway": 4,
         "checkedAt": "2026-11-01T05:50:09.228720+00:00",
+        "teamNews": "Not available from the free fixtures/results feed.",
+        "lineupStatus": "Not available — do not interpret as checked",
+        "playingStyles": "Not evaluated: no licensed event/style statistics in this feed.",
+        "withWithout": "Not evaluated: player start/absence history unavailable.",
+        "dataQuality": "Current-season results and home/away samples only; no corners, PSL, injury or 2UP confirmation.",
+        "note": "Experimental estimate based on observed scores only. Cannot guarantee accuracy; team news may change the outlook.",
+        "sources": [
+          "https://www.football-data.org/"
+        ]
+      }
+    },
+    "FDORG-558538-goals25": {
+      "id": "FDORG-558538-goals25",
+      "fixtureId": 558538,
+      "league": "Serie A",
+      "home": "Monza",
+      "away": "Atalanta",
+      "kickoff": "2026-11-08T14:00:00Z",
+      "marketType": "goals25",
+      "market": "OVER 2.5 GOALS",
+      "tip": "Over 2.5 goals",
+      "confidence": 65,
+      "projectedTotal": 3.5,
+      "reason": "Experimental goals model: 1.91 expected home goals and 1.59 away; not a verified win probability.",
+      "status": "pending",
+      "research": {
+        "sampleHome": 4,
+        "sampleAway": 4,
+        "checkedAt": "2026-11-02T06:07:23.556706+00:00",
+        "teamNews": "Not available from the free fixtures/results feed.",
+        "lineupStatus": "Not available — do not interpret as checked",
+        "playingStyles": "Not evaluated: no licensed event/style statistics in this feed.",
+        "withWithout": "Not evaluated: player start/absence history unavailable.",
+        "dataQuality": "Current-season results and home/away samples only; no corners, PSL, injury or 2UP confirmation.",
+        "note": "Experimental estimate based on observed scores only. Cannot guarantee accuracy; team news may change the outlook.",
+        "sources": [
+          "https://www.football-data.org/"
+        ]
+      }
+    },
+    "FDORG-558530-goals25": {
+      "id": "FDORG-558530-goals25",
+      "fixtureId": 558530,
+      "league": "Serie A",
+      "home": "Inter",
+      "away": "Como 1907",
+      "kickoff": "2026-11-08T17:00:00Z",
+      "marketType": "goals25",
+      "market": "OVER 2.5 GOALS",
+      "tip": "Over 2.5 goals",
+      "confidence": 65,
+      "projectedTotal": 3.47,
+      "reason": "Experimental goals model: 1.83 expected home goals and 1.65 away; not a verified win probability.",
+      "status": "pending",
+      "research": {
+        "sampleHome": 5,
+        "sampleAway": 6,
+        "checkedAt": "2026-11-02T06:07:23.556706+00:00",
+        "teamNews": "Not available from the free fixtures/results feed.",
+        "lineupStatus": "Not available — do not interpret as checked",
+        "playingStyles": "Not evaluated: no licensed event/style statistics in this feed.",
+        "withWithout": "Not evaluated: player start/absence history unavailable.",
+        "dataQuality": "Current-season results and home/away samples only; no corners, PSL, injury or 2UP confirmation.",
+        "note": "Experimental estimate based on observed scores only. Cannot guarantee accuracy; team news may change the outlook.",
+        "sources": [
+          "https://www.football-data.org/"
+        ]
+      }
+    },
+    "FDORG-565855-goals25": {
+      "id": "FDORG-565855-goals25",
+      "fixtureId": 565855,
+      "league": "Bundesliga",
+      "home": "1. FC Köln",
+      "away": "Leverkusen",
+      "kickoff": "2026-11-08T14:30:00Z",
+      "marketType": "goals25",
+      "market": "OVER 2.5 GOALS",
+      "tip": "Over 2.5 goals",
+      "confidence": 68,
+      "projectedTotal": 3.43,
+      "reason": "Experimental goals model: 2.07 expected home goals and 1.36 away; not a verified win probability.",
+      "status": "pending",
+      "research": {
+        "sampleHome": 4,
+        "sampleAway": 4,
+        "checkedAt": "2026-11-02T06:07:23.556706+00:00",
+        "teamNews": "Not available from the free fixtures/results feed.",
+        "lineupStatus": "Not available — do not interpret as checked",
+        "playingStyles": "Not evaluated: no licensed event/style statistics in this feed.",
+        "withWithout": "Not evaluated: player start/absence history unavailable.",
+        "dataQuality": "Current-season results and home/away samples only; no corners, PSL, injury or 2UP confirmation.",
+        "note": "Experimental estimate based on observed scores only. Cannot guarantee accuracy; team news may change the outlook.",
+        "sources": [
+          "https://www.football-data.org/"
+        ]
+      }
+    },
+    "FDORG-565854-goals25": {
+      "id": "FDORG-565854-goals25",
+      "fixtureId": 565854,
+      "league": "Bundesliga",
+      "home": "Freiburg",
+      "away": "Union Berlin",
+      "kickoff": "2026-11-08T16:30:00Z",
+      "marketType": "goals25",
+      "market": "OVER 2.5 GOALS",
+      "tip": "Over 2.5 goals",
+      "confidence": 71,
+      "projectedTotal": 3.71,
+      "reason": "Experimental goals model: 2.51 expected home goals and 1.20 away; not a verified win probability.",
+      "status": "pending",
+      "research": {
+        "sampleHome": 4,
+        "sampleAway": 3,
+        "checkedAt": "2026-11-02T06:07:23.556706+00:00",
+        "teamNews": "Not available from the free fixtures/results feed.",
+        "lineupStatus": "Not available — do not interpret as checked",
+        "playingStyles": "Not evaluated: no licensed event/style statistics in this feed.",
+        "withWithout": "Not evaluated: player start/absence history unavailable.",
+        "dataQuality": "Current-season results and home/away samples only; no corners, PSL, injury or 2UP confirmation.",
+        "note": "Experimental estimate based on observed scores only. Cannot guarantee accuracy; team news may change the outlook.",
+        "sources": [
+          "https://www.football-data.org/"
+        ]
+      }
+    },
+    "FDORG-565856-goals25": {
+      "id": "FDORG-565856-goals25",
+      "fixtureId": 565856,
+      "league": "Bundesliga",
+      "home": "Hoffenheim",
+      "away": "Schalke",
+      "kickoff": "2026-11-08T18:30:00Z",
+      "marketType": "goals25",
+      "market": "OVER 2.5 GOALS",
+      "tip": "Over 2.5 goals",
+      "confidence": 67,
+      "projectedTotal": 3.3,
+      "reason": "Experimental goals model: 1.98 expected home goals and 1.32 away; not a verified win probability.",
+      "status": "pending",
+      "research": {
+        "sampleHome": 4,
+        "sampleAway": 4,
+        "checkedAt": "2026-11-02T06:07:23.556706+00:00",
         "teamNews": "Not available from the free fixtures/results feed.",
         "lineupStatus": "Not available — do not interpret as checked",
         "playingStyles": "Not evaluated: no licensed event/style statistics in this feed.",
