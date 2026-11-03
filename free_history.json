@@ -13,7 +13,7 @@
       "confidence": 66,
       "projectedTotal": 3.62,
       "reason": "Experimental goals model: 1.84 expected home goals and 1.78 away; not a verified win probability.",
-      "status": "pending",
+      "status": "won",
       "research": {
         "sampleHome": 4,
         "sampleAway": 4,
@@ -27,7 +27,8 @@
         "sources": [
           "https://www.football-data.org/"
         ]
-      }
+      },
+      "finalScore": "2–4"
     },
     "FDORG-565839-goals25": {
       "id": "FDORG-565839-goals25",
