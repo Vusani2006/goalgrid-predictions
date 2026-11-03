@@ -31,5 +31,5 @@ jobs:
           git add data.js free_history.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update Apes Nation free goal predictions and results'
-            git push
-          fi
+            git pull --rebase origin main
+git push origin HEAD:main
