@@ -29,7 +29,9 @@ class OwnerVIPSecurity(unittest.TestCase):
         self.assertIn("db.from('site_owner').select('user_id')", self.js)
         self.assertIn('ownerResult.data?.user_id === user.id', self.js)
         self.assertIn('Database row-level security', self.js)
-        self.assertIn("supabaseUrl: ''", (ROOT / 'config.js').read_text())
+        self.assertIn("supabaseUrl:", (ROOT / 'config.js').read_text())
+        self.assertIn("supabaseAnonKey:", (ROOT / 'config.js').read_text())
+        self.assertNotIn("service_role", (ROOT / 'config.js').read_text().split("window.GOALGRID_CONFIG =", 1)[-1])
 
 if __name__ == '__main__':
     unittest.main()

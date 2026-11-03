@@ -7,6 +7,7 @@ lineups/injuries, PSL or premium picks. No raw API keys enter public files.
 Run on GitHub Actions with FOOTBALL_DATA_ORG_KEY repository secret.
 """
 import datetime as dt
+import csv
 import json
 import math
 import os
@@ -17,6 +18,7 @@ import urllib.request
 from collections import Counter
 from zoneinfo import ZoneInfo
 import quality_model as qm
+import corners_model as cm
 
 BASE = 'https://api.football-data.org/v4'
 ROOT = pathlib.Path(__file__).resolve().parent
@@ -207,7 +209,7 @@ def forecast(match, league, matches, now):
     return out
 
 
-def settle_pick(pick, match):
+def settle_pick(pick, match, corner_row=None):
     score = completed_score(match)
     if not score:
         return False
@@ -217,6 +219,13 @@ def settle_pick(pick, match):
     elif pick['marketType'] == 'resultFT':
         actual = 'Home win' if h > a else ('Draw' if h == a else 'Away win')
         win = actual == pick['tip']
+    elif pick['marketType'] in ('cornersFT', 'corners1H'):
+        if corner_row is None or match.get('status') != 'FINISHED':
+            return False
+        field = 'ft_total' if pick['marketType'] == 'cornersFT' else 'h1_total'
+        if corner_row.get(field) is None:
+            return False
+        win = corner_row[field] > pick['threshold']
     else:
         return False
     pick['status'] = 'won' if win else 'lost'
@@ -224,8 +233,9 @@ def settle_pick(pick, match):
     return True
 
 
-def create_feed(fixtures_by_league, now, history=None):
+def create_feed(fixtures_by_league, now, history=None, corner_rows=None):
     history = dict(history or {})
+    corner_rows = corner_rows or {}
     all_by_id = {}
     for code, matches in fixtures_by_league.items():
         if code not in LEAGUES:
@@ -233,14 +243,15 @@ def create_feed(fixtures_by_league, now, history=None):
         for match in matches:
             if match.get('id') is not None:
                 all_by_id[str(match['id'])] = match
-            for pick in forecast(match, LEAGUES[code], matches, now):
+            corner_match = dict(match, _corner_league_ids={str(m.get("id")) for m in matches})
+            for pick in forecast(match, LEAGUES[code], matches, now) + cm.forecast_corners(corner_match, LEAGUES[code], corner_rows, now, kickoff, team_id, team_name):
                 if pick['id'] not in history:
                     history[pick['id']] = pick
     for pick in history.values():
         if pick.get('status') == 'pending':
             match = all_by_id.get(str(pick.get('fixtureId')))
             if match:
-                settle_pick(pick, match)
+                settle_pick(pick, match, corner_rows.get(str(match.get("id"))))
     cutoff = now - dt.timedelta(days=MAX_AGE_DAYS)
     filtered = {}
     for key, p in history.items():
@@ -277,19 +288,20 @@ def main():
         history = saved.get('picks') or {}
     else:
         history = {}
-    updated, picks = create_feed(fixtures, now, history)
+    corner_rows = cm.load_corner_csv(ROOT / "corners_history.csv")
+    updated, picks = create_feed(fixtures, now, history, corner_rows)
     meta = {
         'automated': True,
         'updatedAt': now.isoformat().replace('+00:00', 'Z'),
         'selectedLeagues': [LEAGUES[code] for code in fixtures],
-        'message': 'Experimental goals and 1X2 estimates from available competitions only. Some UEFA/international tournaments may be unavailable under the API plan or lack enough recent match history. No automated corners, PSL, squad or 2UP verification.',
+        'message': 'Experimental 1X2 and Over 2.5 estimates from football-data.org. First-half and full-time corners require real verified match-level corners_history.csv observations; unavailable without enough data. No PSL, squad or 2UP verification.',
     }
     payload = ('window.GOALGRID_META = ' + json.dumps(meta, ensure_ascii=False) + ';\n' +
                'window.GOALGRID_PICKS = ' + json.dumps(picks, ensure_ascii=False) + ';\n')
     # Only write after ALL requests succeed, preserving prior published picks on errors.
     (ROOT / 'data.js').write_text(payload, encoding='utf-8')
     archive_path.write_text(json.dumps({'picks': updated}, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(f'Published {len(picks)} recent picks ({sum(p["status"] == "pending" for p in picks)} pending); goal and FT result only.')
+    print(f'Published {len(picks)} recent picks ({sum(p["status"] == "pending" for p in picks)} pending); goals, 1X2 and data-supported corners.')
 
 
 if __name__ == '__main__':
