@@ -24,7 +24,10 @@ TZ = ZoneInfo('Africa/Johannesburg')
 LEAGUES = {
     'PL': 'Premier League', 'PD': 'La Liga', 'SA': 'Serie A',
     'BL1': 'Bundesliga', 'FL1': 'Ligue 1', 'PPL': 'Primeira Liga',
+    'CL': 'UEFA Champions League', 'EL': 'UEFA Europa League',
+    'EC': 'European Championship', 'WC': 'FIFA World Cup',
 }
+CORE_LEAGUES = ('PL', 'PD', 'SA', 'BL1', 'FL1', 'PPL')
 SOURCE = 'https://www.football-data.org/'
 MIN_LEAGUE_GAMES = 20
 MIN_TEAM_GAMES = 6
@@ -260,7 +263,13 @@ def main():
     for index, code in enumerate(LEAGUES):
         if index:
             time.sleep(6.2)  # conservative: under free tier's 10 calls/min
-        fixtures[code] = fetch_competition(code, key)
+        try:
+            fixtures[code] = fetch_competition(code, key)
+        except RuntimeError as error:
+            if code in CORE_LEAGUES:
+                raise  # Preserve the previous feed if a core league cannot load.
+            print(f'{code}: optional competition unavailable ({error}); skipping')
+            continue
         print(f'{code}: {len(fixtures[code])} fixtures returned')
     archive_path = ROOT / 'free_history.json'
     if archive_path.exists():
@@ -272,8 +281,8 @@ def main():
     meta = {
         'automated': True,
         'updatedAt': now.isoformat().replace('+00:00', 'Z'),
-        'selectedLeagues': list(LEAGUES.values()),
-        'message': 'Free-data feed active: only observed current-season goals and 1X2 estimates. No picks may meet the research thresholds today. No automated PSL, corners, squad or 2UP verification.',
+        'selectedLeagues': [LEAGUES[code] for code in fixtures],
+        'message': 'Experimental goals and 1X2 estimates from available competitions only. Some UEFA/international tournaments may be unavailable under the API plan or lack enough recent match history. No automated corners, PSL, squad or 2UP verification.',
     }
     payload = ('window.GOALGRID_META = ' + json.dumps(meta, ensure_ascii=False) + ';\n' +
                'window.GOALGRID_PICKS = ' + json.dumps(picks, ensure_ascii=False) + ';\n')
