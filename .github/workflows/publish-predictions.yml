@@ -1,4 +1,5 @@
-name: Generate daily Apes Nation football predictions (FREE)
+
+[13:47, 03/11/2026] Vusani(kwiish RSA): name: Generate daily Apes Nation football predictions (FREE)
 on:
   schedule:
     # 05:17 UTC = 07:17 SAST; GitHub can delay or skip scheduled runs.
@@ -23,7 +24,41 @@ jobs:
       - name: Generate free predictions using football-data.org
         env:
           FOOTBALL_DATA_ORG_KEY: ${{ secrets.FOOTBALL_DATA_ORG_KEY }}
+     …
+[13:49, 03/11/2026] Vusani(kwiish RSA): name: Generate daily Apes Nation football predictions (FREE)
+
+on:
+  schedule:
+    # 05:17 UTC = 07:17 SAST
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apes-nation-free-daily-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish-predictions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check free prediction model
+        run: python -m unittest -q test_free_predict.py
+
+      - name: Generate free predictions using football-data.org
+        env:
+          FOOTBALL_DATA_ORG_KEY: ${{ secrets.FOOTBALL_DATA_ORG_KEY }}
         run: python free_predict.py
+
       - name: Commit public predictions to GitHub (Netlify rebuild)
         run: |
           git config user.name 'apes-nation-automation'
@@ -32,4 +67,5 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'Update Apes Nation free goal predictions and results'
             git pull --rebase origin main
-git push origin HEAD:main
+            git push origin HEAD:main
+          fi
